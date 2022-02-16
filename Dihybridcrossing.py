@@ -7,6 +7,7 @@ def cross(mom, dad):
     splittwo = []
     for i in range(0, 2):
         splitone.extend([mom[i] + mom[2], mom[i] + mom[3]]) #makes them into pairs of two RRYY into RY RY RY RY 
+        splitone.extend([mom[i] + mom[2], mom[i] + mom[3]]) #makes them into pairs of two RRYY into RY RY RY RY or foils them out basically
         splittwo.extend([dad[i] + dad[2], dad[i] + dad[3]])
     splitone = [letter for i in splitone for letter in i]
     splittwo = [letter for i in splittwo for letter in i]

@@ -123,6 +123,7 @@ elif question == "D":
     uniquelist, numberof, splitone, splittwo, genotypes = cross(firstcross,secondcross)
     separator = "-------+------+------+------"#incredibly ugly way to do this btw 
     print("Punnet Square")
+    print("__________________")
     print("      " + ''.join(sameline(splitone, "     ")))
     print("   " + separator)
     for x in range(0,len(splitone)): 

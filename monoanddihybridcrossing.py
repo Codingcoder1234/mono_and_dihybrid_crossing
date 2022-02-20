@@ -132,7 +132,7 @@ elif question == "D":
                 i = i + 1
             return lists
         sortednonsepcapitals=joiner(sortedsepcapitals)
-        uniqueones = set(sortednonsepcapitals)
+        uniqueones = sorted(set(sortednonsepcapitals))
         uniquelist = []
         for number in uniqueones:
             uniquelist.append(number)

@@ -62,6 +62,30 @@ elif question == "D":
     def cross(mom, dad):
         mom=list(mom)
         dad=list(dad)
+        momupper = []#basically if the thing is rRyy we want to make it Rryy for simplicity sakes
+        momlower = []
+        dadupper = []
+        dadlower = []
+        newdad = []
+        newmom = []
+        for i in range(0, len(mom),2):
+            if mom[i].isupper() or mom[i].islower() and mom[i+1].islower():
+                momupper.append(mom[i])
+                momlower.append(mom[i+1])
+            elif mom[i].islower() & mom[i+1].isupper():
+                momupper.append(mom[i+1])
+                momlower.append(mom[i])
+            if dad[i].isupper() or dad[i].islower() and dad[i+1].islower():
+                dadupper.append(dad[i])
+                dadlower.append(dad[i+1])
+            elif dad[i].islower() & dad[i+1].isupper():
+                dadupper.append(dad[i+1])
+                dadlower.append(dad[i])
+        for i in range(0, len(momupper)):
+            newmom.extend([momupper[i], momlower[i]])
+            newdad.extend([dadupper[i], dadlower[i]])
+        mom = newmom
+        dad = newdad
         splitone = []
         splittwo = []
         for i in range(0, 2):

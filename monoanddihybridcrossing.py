@@ -2,24 +2,6 @@ question = input("Monohybrid(M) cross or Dihybrid(D) cross? ")
 if question == "M":
     firstcross = input("First Monohybrid Cross: ")
     secondcross = input("Second Monohybrid Cross: ")
-    crossedgenotypes = []
-    uniqueset = []
-    uniquelist =[]
-    splitone = list(firstcross)
-    splittwo = list(secondcross)
-    for f in splitone:
-        for s in splittwo:
-            crossedgenotypes.append(f + s)
-    uniqueset = set(crossedgenotypes) #alr so set basically mixes it up but it doesn't matter since the numberoflists matches up and nobody cares abt the order 
-    for thing in uniqueset:#converts from set to list "uniqueset" is really just a useless middleman
-        uniquelist.append(thing)
-    numberof = []
-    for i in range(0, len(uniquelist)):
-        numberof.append(0)
-    for u in range(0, len(uniquelist)):
-        for a in range(0, len(crossedgenotypes)):
-            if uniquelist[u] == crossedgenotypes[a]:
-                numberof[u] = numberof[u] + 1
     def sortcapitals(list):
         newlist = []
         for item in list:
@@ -41,6 +23,24 @@ if question == "M":
         for x in range(0, len(upper)):
             sorted.append(upper[x] + lower[x])
         return sorted
+    crossedgenotypes = []
+    uniqueset = []
+    uniquelist =[]
+    splitone = list(firstcross)
+    splittwo = list(secondcross)
+    for f in splitone:
+        for s in splittwo:
+            crossedgenotypes.append(f + s)
+    uniqueset = set(crossedgenotypes) #alr so set basically mixes it up but it doesn't matter since the numberoflists matches up and nobody cares abt the order 
+    for thing in uniqueset:#converts from set to list "uniqueset" is really just a useless middleman
+        uniquelist.append(thing)
+    numberof = []
+    for i in range(0, len(uniquelist)):
+        numberof.append(0)
+    for u in range(0, len(uniquelist)):
+        for a in range(0, len(crossedgenotypes)):
+            if uniquelist[u] == crossedgenotypes[a]:
+                numberof[u] = numberof[u] + 1
     uniquelist = sortcapitals(uniquelist)
     print("Punnet Square")
     separator = "----+----"#incredibly ugly way to do this btw 

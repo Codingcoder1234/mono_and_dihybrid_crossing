@@ -25,8 +25,10 @@ if question == "M":
         return sorted
     crossedgenotypes = []
     uniquelist =[]
-    splitone = list(firstcross)
-    splittwo = list(secondcross)
+    splitone = (list(firstcross))
+    splittwo = (list(secondcross))
+    splitone.sort()#sorts them so bB becomes Bb
+    splittwo.sort()
     for f in splitone:
         for s in splittwo:
             crossedgenotypes.append(f + s)

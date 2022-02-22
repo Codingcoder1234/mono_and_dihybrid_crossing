@@ -24,16 +24,14 @@ if question == "M":
             sorted.append(upper[x] + lower[x])
         return sorted
     crossedgenotypes = []
-    uniqueset = []
     uniquelist =[]
     splitone = list(firstcross)
     splittwo = list(secondcross)
     for f in splitone:
         for s in splittwo:
             crossedgenotypes.append(f + s)
-    uniqueset = set(crossedgenotypes) #alr so set basically mixes it up but it doesn't matter since the numberoflists matches up and nobody cares abt the order 
-    for thing in uniqueset:#converts from set to list "uniqueset" is really just a useless middleman
-        uniquelist.append(thing)
+    crossedgenotypes = sortcapitals(crossedgenotypes)#sort capitals before extracting unique ones
+    uniquelist = sorted(set(crossedgenotypes))#no more need for unique set thanks to sorted
     numberof = []
     for i in range(0, len(uniquelist)):
         numberof.append(0)
@@ -43,6 +41,7 @@ if question == "M":
                 numberof[u] = numberof[u] + 1
     uniquelist = sortcapitals(uniquelist)
     print("Punnet Square")
+    print("_________________")
     separator = "----+----"#incredibly ugly way to do this btw 
     print("    " + splitone[0] + "    " + splitone[1])
     print("   " + separator)

@@ -1,7 +1,15 @@
 question = input("Monohybrid(M) cross or Dihybrid(D) cross? ")
+while(question.upper() != "M" or question.upper() !="D"):
+  if(question.upper() == "M" or question.upper() == "D"):
+      break
+  question = input("Input M or D: ")
 if question == "M":
     firstcross = input("First Monohybrid Cross: ")
+    while len(list(firstcross)) != 2:
+      firstcross = input("Not the right length, enter again: ")
     secondcross = input("Second Monohybrid Cross: ")
+    while len(list(secondcross)) != 2:#correction for user error
+      secondcross = input("Not the right length, enter again: ")
     def sortcapitals(list):
         newlist = []
         for item in list:
@@ -54,7 +62,10 @@ if question == "M":
         print(str(numberof[x]) + "/4 " + str(uniquelist[x]))
 elif question == "D":
     firstcross = input("First Dihybrid Cross: ")
+    while len(list(firstcross)) != 4:
+      firstcross = input("Not the right length, enter again: ")
     secondcross = input("Second Dihybrid Cross: ")
+    
     def sameline(list,string):#makes something like 'a','b' into "a b"
         newlist = []
         for i in range(0, len(list)):

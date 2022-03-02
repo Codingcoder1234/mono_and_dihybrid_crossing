@@ -3,6 +3,7 @@ while question.upper() != "M" or question.upper() != "D":
     if question.upper() == "M" or question.upper() =="D":
         break
     question = input("Input M or D: ")
+if question.upper() == "M":
     firstcross = input("First Monohybrid Cross: ")
     while len(list(firstcross)) != 2:
       firstcross = input("Not the right length, enter again: ")

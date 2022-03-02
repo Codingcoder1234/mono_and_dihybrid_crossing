@@ -1,9 +1,8 @@
 question = input("Monohybrid(M) cross or Dihybrid(D) cross? ")
-while(question.upper() != "M" or question.upper() !="D"):
-  if(question.upper() == "M" or question.upper() == "D"):
-      break
-  question = input("Input M or D: ")
-if question == "M":
+while question.upper() != "M" or question.upper() != "D":
+    if question.upper() == "M" or question.upper() =="D":
+        break
+    question = input("Input M or D: ")
     firstcross = input("First Monohybrid Cross: ")
     while len(list(firstcross)) != 2:
       firstcross = input("Not the right length, enter again: ")
@@ -60,7 +59,7 @@ if question == "M":
         print("   " + separator)
     for x in range(0, len(uniquelist)):
         print(str(numberof[x]) + "/4 " + str(uniquelist[x]))
-elif question == "D":
+elif question.upper() == "D":
     firstcross = input("First Dihybrid Cross: ")
     while len(list(firstcross)) != 4:
       firstcross = input("Not the right length, enter again: ")
